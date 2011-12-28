@@ -4,8 +4,8 @@ from stylus.compiler import Compiler
 
 register = template.Library()
 
-@register.tag(name='stylus')
-def stylus(parser, token):
+@register.tag()
+def css(parser, token):
     try:
         tokens = token.split_contents()
         tag_name, files = tokens[0], tokens[1:]
