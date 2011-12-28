@@ -1,3 +1,6 @@
 *.pyc
 test.db
 .DS_Store
+sample/stylus
+sample/static/_css/compiled/*
+build/*
