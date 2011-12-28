@@ -4,19 +4,16 @@ django-stylus lets you to integrate [Stylus](http://learnboost.github.com/stylus
 django-stylus is based on monokrome's `django-cafe` from https://github.com/monokrome/django-cafe
 
 ## Install
-	
-	easy_install django-stylus
 
-or
-
-	git clone
+	git clone https://github.com/lusentis/django-stylus/
 	python setup.py install
+
+A pypi package will be available when `django-stylus` will be _stable_.
 
 ## Setup
 
 1.	Install stylus command line
-2.	Add `stylus` to your `settings.INSTALLED_APPS
-
+2.	Add `stylus` to your `settings.INSTALLED_APPS`
 
     INSTALLED_APPS = (
       ...
