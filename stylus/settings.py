@@ -11,7 +11,7 @@ STYLUS_CACHE_TIME = getattr(django_settings, 'STYLUS_CACHE_TIME', 60*60)
 
 """ stylus executable settings """
 STYLUS_BIN = getattr(django_settings, 'STYLUS_BIN', 'stylus')
-STYLUS_PARAMS = getattr(django_settings, 'STYLUS_PARAMS', '')
+STYLUS_PARAMS = '' #getattr(django_settings, 'STYLUS_PARAMS', ' -c -f -l --inline ')
 
 """ make output directories """
 os.makedirs(STYLUS_OUTPUT_DIR)
