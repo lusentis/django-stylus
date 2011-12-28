@@ -10,18 +10,20 @@ django-stylus is based on monokrome's `django-cafe` from https://github.com/mono
 or
 
 	git clone
-	python setup.py
+	python setup.py install
 
 ## Setup
 
 1.	Install stylus command line
 2.	Add `stylus` to your `settings.INSTALLED_APPS
 
+
     INSTALLED_APPS = (
       ...
       "stylus", 
       ...      
     ) 
+
 
 ## Settings
 
