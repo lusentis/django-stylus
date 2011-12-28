@@ -8,5 +8,5 @@ setup(name='django-stylus',
       author='Simone Lusenti',
       author_email='simone@slusenti.me',
       url='https://github.com/lusentis/django-stylus/',
-      packages=['stylus',],
+      packages=['stylus','stylus.templatetags'],
 )
