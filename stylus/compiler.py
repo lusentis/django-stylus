@@ -7,7 +7,7 @@ import settings
 from django.core.cache import cache
 
 class Compiler(object):
-	""" Compile Stylus CSS files """
+    """ Compile Stylus CSS files """
 
     def __init__(self, files):
         self.files = files
@@ -27,11 +27,11 @@ class Compiler(object):
     @property
     def mtimes(self):
         return map(self.mtime, self.files)
-    
+
     def build(self, output):
         files = map(self.path, self.files)
-        with open(os.path.join(settings.STYLUS_OUTPUT_DIR, output), 'w') as out:
-            proc = subprocess.Popen([settings.STYLUS_BIN, settings.STYLUS_PARAMS] + files,
+        with open(os.path.join(settings.STYLUS_SYS_OUTPUT_DIR, output), 'w') as out:
+            proc = subprocess.Popen([settings.STYLUS_BIN, ''.join([settings.STYLUS_PARAMS, files[0]])],
                                     stdout=subprocess.PIPE)
             stdout, stderr = proc.communicate()
             out.write(stdout)
@@ -40,7 +40,7 @@ class Compiler(object):
         mtimes = self.mtimes
 
         base_name = hashlib.sha1(''.join(map(str, mtimes))).hexdigest()[:16]
-        name = '.'.join([base_name, 'js'])        
+        name = '.'.join([base_name, 'css'])
 
         key = '-'.join(['STYLUS', self.hash])
 
@@ -49,5 +49,4 @@ class Compiler(object):
             self.build(name)
             cache.set(key, name, settings.STYLUS_CACHE_TIME)
 
-        return os.path.join(settings.STYLUS_OUTPUT_DIR, name)
-
+        return '/'.join([settings.STYLUS_URL, name])
