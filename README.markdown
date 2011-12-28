@@ -1,3 +1,6 @@
+# This is a work in progress. Don't use #
+# ------- #
+
 # Django Stylus
 
 django-stylus lets you to integrate [Stylus](http://learnboost.github.com/stylus/) in your Django projects. 
