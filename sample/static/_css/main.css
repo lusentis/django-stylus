@@ -1,0 +1,8 @@
+/* Stylus CSS example */
+#prompt {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+}
